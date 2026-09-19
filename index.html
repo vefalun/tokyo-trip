@@ -3,99 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>东京·伊豆·镰仓·横滨 | 9天行程计划</title>
-<style>  :root{
-    --bg:#f7f6f3; --card:#ffffff; --ink:#2b2b2b; --muted:#7a7a7a;
-    --line:#e7e4dd; --accent:#c2410c; --accent-soft:#fdeee6;
-    --tokyo:#b45309; --izu:#15803d; --kamakura:#1d4ed8; --yokohama:#7c3aed;
-    --good:#059669; --warn:#b45309; --chip-bg:#f1eee8;
+<meta name="description" content="东京·伊豆·镰仓·横滨 9 天 8 晚行程计划，含每日交通、餐饮、预约与注意事项">
+<title>东京 · 伊豆 · 镰仓 · 横滨 | 9 天行程计划</title>
+<style>
+  :root{
+    --bg:#f4f2ec; --card:#ffffff; --ink:#262626; --muted:#7d7d78;
+    --line:#e8e4da; --accent:#d0480f; --accent-dark:#a23406; --accent-soft:#fcedf2;
+    --sunny:#f7f3e7; --tokyo:#b45309; --izu:#15803d; --kamakura:#1d4ed8; --yokohama:#7c3aed;
+    --good:#059669; --warn:#b45309; --info:#1d4ed8; --chip:#f1ede4;
+    --shadow:0 1px 2px rgba(60,40,0,.04), 0 6px 20px rgba(60,40,0,.05);
+    --radius:16px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top:68px;}
   body{
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
       "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background:var(--bg); color:var(--ink); line-height:1.6; font-size:15px;
+    background:var(--bg); color:var(--ink); line-height:1.65; font-size:15px;
   }
-  .wrap{max-width:920px; margin:0 auto; padding:0 18px 80px;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 18px 90px;}
 
-  /* header */
-  header{background:linear-gradient(135deg,#1f2937,#3f3f46); color:#fff; padding:34px 18px 30px;}
-  header .wrap{max-width:920px;}
-  .kicker{font-size:12px; letter-spacing:2px; color:#fbbf24; text-transform:uppercase; margin-bottom:8px;}
-  h1{font-size:26px; line-height:1.3;}
-  .sub{color:#d1d5db; margin-top:8px; font-size:14px;}
-  .quick{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
-  .pill{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); padding:6px 12px; border-radius:999px; font-size:12px;}
+  /* ===== header ===== */
+  header{
+    position:relative; overflow:hidden; color:#fff;
+    background:linear-gradient(135deg,#1c1917 0%, #3f2d1c 55%, #7a4020 100%);
+    padding:46px 0 40px;
+  }
+  header::after{
+    content:""; position:absolute; inset:0; opacity:.16; pointer-events:none;
+    background:radial-gradient(circle at 85% 20%,#fbbf24 0,transparent 46%),
+               radial-gradient(circle at 15% 90%,#f97316 0,transparent 40%);
+  }
+  header .wrap{position:relative; z-index:1;}
+  .kicker{font-size:12px; letter-spacing:3px; color:#fbbf24; text-transform:uppercase; margin-bottom:10px; font-weight:600;}
+  h1{font-size:30px; line-height:1.25; font-weight:800; letter-spacing:.5px;}
+  .sub{color:#e7e5e4; margin-top:10px; font-size:14px; opacity:.92;}
+  .quick{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .pill{
+    background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(6px); padding:7px 13px; border-radius:999px; font-size:12px;
+  }
+  .pill b{color:#fde68a;}
 
-  /* nav */
-  nav{position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line);}
-  nav .wrap{display:flex; gap:4px; overflow-x:auto; padding:8px 18px; max-width:920px;}
-  nav a{white-space:nowrap; padding:6px 10px; border-radius:8px; color:var(--ink); text-decoration:none; font-size:13px;}
-  nav a:hover{background:var(--accent-soft); color:var(--accent);}
+  /* ===== nav ===== */
+  nav{position:sticky; top:0; z-index:30; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; gap:4px; overflow-x:auto; padding:9px 18px; max-width:960px;}
+  nav a{white-space:nowrap; padding:7px 11px; border-radius:9px; color:var(--ink); text-decoration:none; font-size:13px; font-weight:500;}
+  nav a:hover{background:var(--accent-soft); color:var(--accent-dark);}
 
-  section{margin-top:34px; scroll-margin-top:60px;}
-  h2{font-size:20px; border-left:4px solid var(--accent); padding-left:10px;}
-  .lead{color:var(--muted); font-size:13px; margin-top:6px;}
+  section{margin-top:42px; scroll-margin-top:70px;}
+  h2{font-size:21px; display:flex; align-items:center; gap:10px;}
+  h2 .no{display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:9px; background:var(--accent); color:#fff; font-size:15px; font-weight:700; flex-shrink:0;}
+  .lead{color:var(--muted); font-size:13px; margin-top:8px;}
 
-  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin-top:14px; box-shadow:0 1px 2px rgba(0,0,0,.03);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; margin-top:14px; box-shadow:var(--shadow);}
 
-  /* overview table */
+  /* tables */
   table{width:100%; border-collapse:collapse; font-size:13px;}
-  th,td{text-align:left; padding:9px 8px; border-bottom:1px solid var(--line); vertical-align:top;}
-  th{color:var(--muted); font-weight:600; background:var(--chip-bg);}
+  th,td{text-align:left; padding:9px 9px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{color:var(--muted); font-weight:600; background:var(--chip); font-size:12px;}
   tr:last-child td{border-bottom:none;}
   .weekend{color:var(--warn); font-weight:600;}
-  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px;}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px;}
 
   /* day cards */
-  .day{background:var(--card); border:1px solid var(--line); border-radius:14px; margin-top:16px; overflow:hidden;}
-  .day-head{display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:14px 16px 10px; border-bottom:1px solid var(--line);}
-  .day-title{font-size:16px; font-weight:700;}
-  .day-tag{font-size:11px; color:#fff; padding:3px 9px; border-radius:999px; flex-shrink:0;}
+  .day{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin-top:18px; overflow:hidden; box-shadow:var(--shadow);}
+  .day-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px 12px; background:linear-gradient(180deg,#fff, #faf8f3); border-bottom:1px solid var(--line);}
+  .day-title{font-size:17px; font-weight:700;}
+  .day-num{color:var(--muted); font-weight:700; margin-right:8px; font-size:14px;}
+  .day-tag{font-size:11px; color:#fff; padding:4px 11px; border-radius:999px; flex-shrink:0; font-weight:600;}
   .fixed{background:var(--good);}
-  .flex{background:var(--line); color:var(--ink);}
-  .day-meta{padding:10px 16px; border-bottom:1px dashed var(--line); font-size:12px; color:var(--muted); display:flex; flex-wrap:wrap; gap:14px;}
+  .flex{background:var(--chip); color:#444; border:1px solid var(--line);}
+  .day-meta{padding:10px 18px; border-bottom:1px dashed var(--line); font-size:12.5px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 18px;}
   .day-meta b{color:var(--ink); font-weight:600;}
-  .day-body{padding:12px 16px 16px;}
-  .note{background:var(--accent-soft); border-left:3px solid var(--accent); padding:8px 12px; border-radius:6px; font-size:12.5px; color:#7c2d12; margin:8px 0;}
-  .warnbox{background:#fff7ed; border-left:3px solid var(--warn); padding:8px 12px; border-radius:6px; font-size:12.5px; color:#7c2d12; margin:8px 0;}
+  .day-body{padding:14px 18px 18px;}
+  .ts{display:grid; grid-template-columns:auto 1fr; gap:8px 12px; font-size:13px; margin:2px 0 10px;}
+  .ts .time{color:var(--accent-dark); font-weight:700; white-space:nowrap;}
+  .ts .desc{color:var(--ink);}
 
-  .plist{list-style:none; margin-top:6px; font-size:13px;}
-  .plist li{padding:5px 0 5px 18px; position:relative;}
-  .plist li::before{content:"•"; position:absolute; left:4px; color:var(--accent);}
-  .meal{display:inline-block; background:#f1eee8; border-radius:6px; padding:2px 7px; font-size:11px; color:#57534e; margin:2px 2px 0 0;}
+  h3{font-size:14px; margin:14px 0 6px; color:#3f3f46; display:flex; align-items:center; gap:7px;}
+  h3 .ic{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;background:var(--chip);}
 
-  h3{font-size:14px; margin-top:12px; color:#3f3f46;}
+  /* callouts */
+  .note,.tip,.warn,.info{background:var(--accent-soft); border-left:4px solid var(--accent); padding:10px 13px; border-radius:0 8px 8px 0; font-size:12.8px; margin:8px 0;}
+  .tip{background:#f0fdf6; border-left-color:var(--good);}
+  .info{background:#eff4ff; border-left-color:var(--info);}
+  .warn{background:#fff7ed; border-left-color:var(--warn); color:#7c2d12;}
 
-  /* grid */
-  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; margin-top:12px;}
-  .mini{background:#faf9f6; border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:12.5px;}
+  .plist{list-style:none; margin-top:6px; font-size:13.3px;}
+  .plist li{padding:5px 0 5px 20px; position:relative;}
+  .plist li::before{content:"➤"; position:absolute; left:2px; color:var(--accent); font-size:10px; top:8px;}
+  .trans{background:none; border:1px dashed var(--line); border-radius:10px; padding:10px 12px; margin-top:8px; font-size:13px;}
+  .trans b{color:var(--accent-dark);}
+  .trans .rt{display:block; color:var(--muted); font-size:12px; margin-top:3px;}
+  .meal{display:inline-block; background:#f1ede4; border-radius:6px; padding:2px 8px; font-size:11px; color:#57534e; margin:3px 3px 0 0;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(225px,1fr)); gap:10px; margin-top:10px;}
+  .mini{background:#faf8f2; border:1px solid var(--line); border-radius:10px; padding:10px 13px; font-size:12.6px;}
   .mini b{display:block; font-size:12px; margin-bottom:2px; color:var(--accent);}
 
-  .legend .dot{margin-left:4px;}
-  .footer{color:var(--muted); font-size:12px; margin-top:40px; text-align:center;}
+  .dst{font-size:12.5px; display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;}
+  .dst span{background:#f1ede4; border-radius:999px; padding:3px 10px; font-size:11.5px;}
 
-  .toc-table{width:100%;}
-  @media (max-width:600px){
-  h1{font-size:22px;}
-  h2{font-size:18px;}
-  .day-head{flex-direction:column;}
-}
+  .footer{color:var(--muted); font-size:12px; margin-top:46px; text-align:center; border-top:1px solid var(--line); padding-top:20px;}
+
+  /* back-to-top */
+  #topbtn{position:fixed; right:18px; bottom:20px; z-index:40; display:none; width:42px;height:42px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:18px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25);}
+  #topbtn.show{display:block;}
+
+  @media (max-width:640px){
+    h1{font-size:24px;}
+    .day-head{flex-direction:column; align-items:flex-start;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .quick{flex-direction:column;}
+    .ts{grid-template-columns:54px 1fr;}
+  }
+  @media (max-width:420px){ .grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="kicker">2026 国庆黄金周</div>
-    <h1>东京 · 伊豆/富士山 · 横滨 · 镰仓<br>9 天 8 晚行程</h1>
+    <div class="kicker">2026 · 国庆黄金周</div>
+    <h1>东京 · 伊豆 · 镰仓 · 横滨<br>9 天 8 晚旅行计划</h1>
     <div class="sub">9 月 25 日（周五）— 10 月 3 日（周六）· 情侣两人 · 上海浦东 ⇄ 东京成田</div>
     <div class="quick">
-      <span class="pill">✈️ 9/25 浦东 14:35 → 成田 18:45</span>
-      <span class="pill">🏨 9/25–9/30 VIA INN PRIME 日本桥人形町</span>
-      <span class="pill">🏨 9/30–10/3 横滨洲际大酒店（84㎡ 套房）</span>
-      <span class="pill">✈️ 10/3 成田 15:20 → 浦东 17:50</span>
+      <span class="pill">✈️ 去 <b>9/25 浦东 14:35 → 成田 18:45</b></span>
+      <span class="pill">🏨 9/25–9/30 <b>VIA INN PRIME 日本桥人形町</b>（21㎡ 大床·不含早）</span>
+      <span class="pill">🏨 9/30–10/3 <b>横滨洲际大酒店</b>（84㎡ 套房·含早）</span>
+      <span class="pill">✈️ 返 <b>10/3 成田 15:20 → 浦东 17:50</b></span>
     </div>
   </div>
 </header>
@@ -103,384 +140,580 @@
 <nav>
   <div class="wrap">
     <a href="#overview">总览</a>
-    <a href="#day1">9/25</a>
-    <a href="#day2">9/26 涩谷</a>
-    <a href="#day3">9/27 浅草</a>
-    <a href="#day4">9/28 筑地银座</a>
-    <a href="#day5">9/29 伊豆</a>
-    <a href="#day6">9/30 横滨</a>
-    <a href="#day7">10/1 镰仓</a>
-    <a href="#day8">10/2 横滨市区</a>
-    <a href="#day9">10/3 返程</a>
-    <a href="#bookings">预约</a>
-    <a href="#weather">天气调整</a>
-    <a href="#budget">餐饮预算</a>
+    <a href="#day1">9/25</a><a href="#day2">9/26 涩谷</a><a href="#day3">9/27 浅草</a>
+    <a href="#day4">9/28 筑地银座</a><a href="#day5">9/29 伊豆</a><a href="#day6">9/30 横滨</a>
+    <a href="#day7">10/1 镰仓</a><a href="#day8">10/2 横滨市区</a><a href="#day9">10/3 返程</a>
+    <a href="#bookings">预约</a><a href="#weather">天气调整</a><a href="#budget">餐饮预算</a><a href="#shopping">购物</a>
   </div>
 </nav>
 
 <div class="wrap">
 
-  <!-- 总览 -->
-  <section id="overview">
-    <h2>一、行程总览</h2>
-    <p class="lead">已按你的新时间安排调整：<b>9/26（周六）去涩谷</b>、<b>9/29（周二）去伊豆/富士山</b>、<b>10/1（周四）去镰仓</b>，其余按星期几重排。标注「固定」为已确认日期。</p>
-    <div class="card">
-      <table class="toc-table">
-        <thead><tr><th>日期</th><th>星期</th><th>住宿</th><th>核心行程</th><th style="width:74px">强度</th></tr></thead>
-        <tbody>
-          <tr><td>9/25</td><td class="weekend">周五</td><td>人形町</td><td>抵达成田 → 酒店</td><td>低</td></tr>
-          <tr><td><span class="dot" style="background:var(--good)"></span>9/26</td><td class="weekend">周六</td><td>人形町</td><td>涩谷：明治神宫 · 原宿/表参道 · 代官山 · 涩谷 + SHIBUYA SKY 日落</td><td>中高</td></tr>
-          <tr><td>9/27</td><td class="weekend">周日</td><td>人形町</td><td>浅草 · 人形町老铺 · 酒店休息 · 秋叶原</td><td>中低</td></tr>
-          <tr><td>9/28</td><td>周一</td><td>人形町</td><td>筑地 · 银座 · 丸之内 · 东京站 + まんてん鮨晚餐</td><td>中</td></tr>
-          <tr><td><span class="dot" style="background:var(--good)"></span>9/29</td><td>周二</td><td>人形町</td><td>伊豆 / 富士山 一日游（早起）</td><td>中</td></tr>
-          <tr><td>9/30</td><td>周三</td><td>横滨</td><td>つじ半海鲜饭 → 转移横滨 → 套房休息 → 港未来夜景</td><td>低</td></tr>
-          <tr><td><span class="dot" style="background:var(--good)"></span>10/1</td><td>周四</td><td>横滨</td><td>镰仓 · 长谷 · 江之电 · 七里滨 · 江之岛</td><td>中高</td></tr>
-          <tr><td>10/2</td><td>周五</td><td>横滨</td><td>三溪园 · 中华街 · 元町/山手 · 山下公园 · 大栈桥</td><td>中</td></tr>
-          <tr><td>10/3</td><td class="weekend">周六</td><td>—</td><td>横滨酒店 → 成田机场 → 上海</td><td>低</td></tr>
-        </tbody>
-      </table>
-      <div class="note" style="margin-top:12px">🔄 9/26 整日为「涩谷+周边」西部时尚线（含 SKY 日落）；原 9/26 的筑地/银座顺延至 <b>9/28（周一）</b>——周末人多的筑地改到工作日体验更佳。</div>
-    </div>
-  </section>
-
-  <!-- 9/25 -->
-  <section id="day1">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 1 · 9 月 25 日（周五）· 抵达成田 → 人形町</div>
-        <span class="day-tag flex">固定 · 抵达</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>人形町</b></span><span>强度：<b>低</b></span><span>重点：<b>交通抵达</b></span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>14:35 上海浦东起飞（建议提前 3 小时到机场）</li>
-          <li>18:45 抵达东京成田机场，办理入境、取行李</li>
-          <li>20:00 左右离开机场 → 京成 Access Express 直通都营浅草线 → 人形町站/日本桥站</li>
-          <li>21:30–22:00 办理入住 VIA INN PRIME 日本桥人形町</li>
-          <li>22:00 后 简单晚餐（不预约正式餐厅，防航班/入境延误）</li>
-        </ul>
-        <div class="warnbox">当晚可选：机场拉面/定食 · 人形町拉面/荞麦面/居酒屋 · 便利店饭团/关东煮/炸鸡；顺手为次日买早餐和一瓶水。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9/26 涩谷 -->
-  <section id="day2">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 2 · 9 月 26 日（周六）· 涩谷（固定）</div>
-        <span class="day-tag fixed">固定 · 涩谷</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>人形町</b></span><span>强度：<b>中高</b></span><span>晚餐：<b>Kaikaya by the Sea</b></span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>09:15–09:50 人形町附近早餐（咖啡、面包、饭团或日式简餐）</li>
-          <li>10:00 出发前往明治神宫</li>
-          <li>10:45–12:00 明治神宫（周日上午人较多）</li>
-          <li>12:00–12:40 原宿 / Cat Street（竹下通快速经过）</li>
-          <li>12:40–14:30 表参道午餐与购物（建筑 + 旗舰店）</li>
-          <li>15:00–16:00 代官山 T-SITE（书店、设计、咖啡）</li>
-          <li>16:10–16:50 中目黑河畔（可选）</li>
-          <li>17:00–17:30 前后 SHIBUYA SKY 入场（看白天→日落→夜景）</li>
-          <li>19:00–20:20 涩谷购物与夜景（PARCO、Scramble Crossing 等）</li>
-          <li>20:30–22:00 Kaikaya by the Sea 晚餐（海鲜创作料理）</li>
-        </ul>
-        <div class="note">🍽️ Kakaya 套餐约 ¥5,800/人起（约 250–350 元，酒水另计）。周六晚建议提前预约，在线预约通常需选套餐并注意取消政策。</div>
-        <div class="note">🗼 SHIBUYA SKY 尽量预约 17:00–17:30 入场，可同时看到白天、日落与亮灯夜景；时段最紧俏，建议尽早订。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9/27 浅草 -->
-  <section id="day3">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 3 · 9 月 27 日（周日）· 浅草 · 人形町 · 秋叶原</div>
-        <span class="day-tag flex">灵活村</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>人形町</b></span><span>强度：<b>中低</b></span><span>节奏：<b>上午传统 · 下午休息 · 晚上秋叶原</b></span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>09:20–10:00 人形町附近早餐</li>
-          <li>10:15 出发前往浅草</li>
-          <li>10:45–12:30 浅草寺及周边（雷门 → 仲见世 → 本堂 → 周边小巷）</li>
-          <li>12:30–13:00 返回人形町</li>
-          <li>13:00–14:30 人形町今半午餐（寿喜烧）</li>
-          <li>14:45–16:30 回酒店休息、整理购物品</li>
-          <li>16:45 出发前往秋叶原</li>
-          <li>17:00–20:15 秋叶原购物（电器、动漫、游戏、手办）</li>
-          <li>20:15–21:30 秋叶原晚餐（拉面/烧肉/居酒屋）</li>
-        </ul>
-        <div class="warnbox">
-          ⚠️ <b>人形町今半本店周日休业</b>（传统寿喜烧老铺多周日公休）。若想保留今半午市，建议把本日与 <a href="#day4">9/28 筑地/银座</a> 互换——浅草与秋叶原在周一照常营业。<br>
-          若维持周日行程，当天午餐改为人形町/浅草其他选择（天妇罗、鳗鱼、日式定食或浅草小吃）。
-        </div>
-        <div class="note">🍽️ 人形町今半：寿喜烧套餐约 ¥5,940/人起（约 280–350 元），建议普通大厅座位、选工作日午市更划算。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9/28 筑地银座 -->
-  <section id="day4">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 4 · 9 月 28 日（周一）· 筑地 · 银座 · 丸之内 · 东京站</div>
-        <span class="day-tag flex">灵活村</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>人形町</b></span><span>强度：<b>中</b></span><span>晚餐：<b>まんてん鮨</b></span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>09:15–09:30 起床整理（工作日不需太早）</li>
-          <li>09:45–11:15 筑地场外市场早餐兼早午餐（少量多样、两人分享）</li>
-          <li>11:30–12:20 滨离宫恩赐庭园（可选）</li>
-          <li>12:30–16:30 银座购物与城市漫步（百货、美妆、文具、建筑、咖啡）</li>
-          <li>16:30–17:15 咖啡休息（不连续暴走）</li>
-          <li>17:15–19:00 日比谷、丸之内、东京站（走到丸之内侧）</li>
-          <li>19:30–21:00 まんてん鮨日本桥晚餐（正式寿司套餐）</li>
-          <li>21:00–22:00 日本桥夜间散步 → 返回酒店</li>
-        </ul>
-        <div class="note">🍽️ 筑地建议分享：玉子烧、烤扇贝、金枪鱼刺身、蟹/海胆小碗、烤鳗鱼、抹茶甜品、草莓大福，不必排大份海鲜丼。</div>
-        <div class="note">🍽️ まんてん鮨日本桥：Omakase 约 ¥8,800/人（约 350–400 元）；预约需绑信用卡、取消政策较严，务必确认行程后再锁定。</div>
-        <div class="grid">
-          <div class="mini"><b>百货/美妆</b>银座三越、松屋银座</div>
-          <div class="mini"><b>设计/生活方式</b>GINZA SIX、MUJI 银座</div>
-          <div class="mini"><b>文具</b>银座伊东屋</div>
-          <div class="mini"><b>潮流买手</b>Dover Street Market Ginza</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9/29 伊豆 -->
-  <section id="day5">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 5 · 9 月 29 日（周二）· 伊豆 / 富士山 一日游（固定）</div>
-        <span class="day-tag fixed">固定 · 一日游</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>人形町</b></span><span>强度：<b>中</b></span><span>重点：<b>早起的唯一一天</b></span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>07:00 左右 起床、简单早餐（前一晚买好饭团/三明治/饮料）</li>
-          <li>07:30–08:00 前往集合点（优先东京站/丸之内）</li>
-          <li>08:00–20:00 左右 伊豆一日游（具体以产品为准）</li>
-          <li>20:30–21:00 返回东京（可能受交通影响）</li>
-          <li>21:00–22:00 人形町附近简单晚餐（不预约有取消费餐厅）</li>
-        </ul>
-        <h3>线路结构（至少含以下核心）</h3>
-        <ul class="plist">
-          <li>大室山 + 城崎海岸/门胁吊桥 +（修善寺温泉街 · 伊东海岸 · 热海 三选一）</li>
-        </ul>
-        <h3>选团原则</h3>
-        <div class="grid">
-          <div class="mini"><b>集合点</b>东京站/丸之内优先，其次新宿</div>
-          <div class="mini"><b>语言</b>中文或中日双语导览</div>
-          <div class="mini"><b>取消政策</b>出发前可免费取消优先</div>
-          <div class="mini"><b>团型</b>中小团，避开大型购物团</div>
-        </div>
-        <div class="note">
-          🗻 富士山替换条件：确认出现明显雪顶 ＋ 河口湖/山中湖/富士吉田天气晴朗 ＋ 云量少可见山体 ＋ 无明显雨风 ＋ 有可取消/有余位产品。若山体被云完全遮住，不建议替换伊豆。<br>
-          ♨️ 箱根为备选：伊豆团取消、天气差或想更轻松时使用。
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9/30 横滨转移 -->
-  <section id="day6">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 6 · 9 月 30 日（周三）· 转移横滨 · 套房 · 港未来夜景</div>
-        <span class="day-tag flex">灵活村</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>横滨洲际</b></span><span>强度：<b>低</b></span><span>缓冲日</span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>09:15–10:00 人形町附近早餐、整理行李</li>
-          <li>10:30 退房并寄存行李</li>
-          <li>11:00–12:00 つじ半日本桥海鲜饭（赶在午餐高峰前）</li>
-          <li>12:15 返回酒店取行李</li>
-          <li>12:30–13:00 出租车前往东京站</li>
-          <li>13:00–14:00 JR 东海道线/上野东京线 → 横滨</li>
-          <li>14:00–14:30 抵达横滨洲际，先寄存行李</li>
-          <li>15:00–17:30 办理入住、享受 84㎡ 套房</li>
-          <li>17:45–19:45 港未来、红砖仓库、海滨散步（傍晚+夜景）</li>
-          <li>19:45–20:15 Air Cabin 或摩天轮（选一个）</li>
-          <li>20:15–21:30 港未来晚餐 → 回酒店继续享受套房</li>
-        </ul>
-        <div class="note">🍽️ つじ半日本桥：ぜいたく丼 约 ¥1,350–3,900/人（约 60–170 元）；通常不接受预约，建议 11:00 左右到减少排队，最后加高汤做茶泡饭。早餐别吃太饱。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10/1 镰仓 -->
-  <section id="day7">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 7 · 10 月 1 日（周四）· 镰仓 · 江之岛（固定）</div>
-        <span class="day-tag fixed">固定 · 一日游</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>横滨洲际</b></span><span>强度：<b>中高</b></span><span>从横滨出发最方便</span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>08:30–09:20 酒店早餐（吃足，不必在镰仓另找早饭）</li>
-          <li>09:30 从酒店出发 → 横滨站 → 镰仓站</li>
-          <li>10:20–11:30 鹤冈八幡宫、小町通（小町通快速游览）</li>
-          <li>11:30–12:45 镰仓午餐（荞麦面、吻仔鱼或日式料理）</li>
-          <li>13:00 搭乘江之电前往长谷（建议买江之电一日券）</li>
-          <li>13:20–14:20 长谷寺（庭园与海景）</li>
-          <li>14:30–15:10 镰仓大佛</li>
-          <li>15:20–16:00 江之电前往七里滨</li>
-          <li>16:00–16:45 七里滨看海、咖啡休息（天气不好可取消）</li>
-          <li>17:00–19:00 江之岛：日落、弁天桥、岛上低处</li>
-          <li>19:00–20:15 江之岛晚餐（吻仔鱼盖饭、烤海鲜）</li>
-          <li>20:15–21:30 返回横滨（湘南单轨→大船→JR）</li>
-        </ul>
-        <div class="note">⛩️ 默认不加入北镰仓（圆觉寺/建长寺）以免早起、寺庙审美疲劳、压缩午餐与日落；若当天特别想看可取消七里滨咖啡，早约 45 分钟出发。</div>
-        <div class="note">🍽️ 若预约到合适时段可去「鎌倉 松原庵」（环境适合情侣，但午市时段偏早）；美食优先版本需 08:00 早餐、08:50 出发、11:00 午餐，并取消上午的八幡宫与小町通。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10/2 横滨市区 -->
-  <section id="day8">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 8 · 10 月 2 日（周五）· 横滨市区</div>
-        <span class="day-tag flex">灵活村</span>
-      </div>
-      <div class="day-meta"><span>酒店：<b>横滨洲际</b></span><span>强度：<b>中</b></span><span>最后一晚</span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>08:30–09:30 酒店早餐</li>
-          <li>10:00 打车前往三溪园</li>
-          <li>10:30–12:20 三溪园（日式庭园、历史建筑，1.5–2 小时）</li>
-          <li>12:20–13:00 打车前往中华街</li>
-          <li>13:00–14:30 萬珍樓午餐（中华街粤菜）</li>
-          <li>14:40–16:40 元町、山手西洋馆、港见丘公园（有坡度，慢慢走）</li>
-          <li>17:00–18:00 Hotel New Grand 下午茶</li>
-          <li>18:00–19:00 山下公园傍晚海港散步</li>
-          <li>19:00–20:00 横滨大栈桥夜景</li>
-          <li>20:15–21:30 勝烈庵晚餐（炸猪排）</li>
-        </ul>
-        <div class="note">🍽️ 萬珍樓本店 ¥4,000/人起（约 180–250 元，可能另有服务费），在线提交后注意查确认邮件。</div>
-        <div class="note">🍽️ Hotel New Grand The Cafe：分享布丁 à la mode、那不勒斯意面、海鲜焗饭、咖啡。</div>
-        <div class="note">🍽️ 勝烈庵 马车道总店：炸猪排套餐约 ¥2,200/人（约 90–120 元），可现场排队；中午/下午茶吃多可减点单量。</div>
-        <div class="warnbox">若前一天镰仓较累，优先删减山手洋馆内部参观，保留：三溪园 → 中华街 → 元町 → New Grand → 山下公园 → 大栈桥。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10/3 返程 -->
-  <section id="day9">
-    <div class="day">
-      <div class="day-head">
-        <div class="day-title">Day 9 · 10 月 3 日（周六）· 横滨 → 成田 → 上海</div>
-        <span class="day-tag flex">固定 · 返程</span>
-      </div>
-      <div class="day-meta"><span>航班：<b>15:20 成田起飞 → 17:50 浦东</b></span><span>强度：<b>低</b></span></div>
-      <div class="day-body">
-        <ul class="plist">
-          <li>07:50–08:40 酒店早餐（当天稍早起床）</li>
-          <li>08:40–09:10 整理行李、退房，检查护照与退税单据</li>
-          <li>09:20 酒店大堂候车（提前确认巴士乘车点）</li>
-          <li>09:40 左右 机场巴士出发（以临行时刻表为准）</li>
-          <li>11:45 左右 抵达成田机场第一航站楼</li>
-          <li>12:00–13:00 值机、安检（国航国际航班）</li>
-          <li>13:00–14:20 机场午餐、补购伴手礼</li>
-          <li>15:20 起飞 → 17:50 抵达上海浦东</li>
-        </ul>
-        <div class="note">🚌 优先横滨洲际周边直达成田的机场巴士；出发前一周再核对 10/3 实际班次、是否停靠酒店、是否需购票、行李限制与 T1 到达时间。若班次调整，可打车至横滨站东口 YCAT 再乘巴士。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 预约 -->
-  <section id="bookings">
-    <h2>二、预约与订位状态</h2>
-    <div class="card">
-      <table>
-        <thead><tr><th>优先级</th><th>项目</th><th>时间</th><th>说明</th></tr></thead>
-        <tbody>
-          <tr><td rowspan="4">第一优先<br>尽快确认</td><td>まんてん鮨 日本桥</td><td class="weekend">9/26 20:00 ✍️已约</td><td>Omakase 约 ¥8,800/人；需绑卡、取消严</td></tr>
-          <tr><td>Kaikaya by the Sea</td><td>9/26 20:30 晚餐</td><td>海鲜创作 ¥5,800 起/人</td></tr>
-          <tr><td>SHIBUYA SKY</td><td>9/26 17:00–17:30</td><td>日落时段最紧俏，尽早订</td></tr>
-          <tr><td>伊豆 / 富士山一日游</td><td>9/29</td><td>优先可免费取消产品</td></tr>
-          <tr><td>第二优先<br>确定后订</td><td>人形町今半本店</td><td>9/27 或 9/28（周一午市更划算）</td><td>周日休业，注意选可调预约</td></tr>
-          <tr><td>—</td><td>萬珍樓本店</td><td>10/2 13:00</td><td>注意餐厅二次确认邮件</td></tr>
-          <tr><td>—</td><td>鎌倉 松原庵（可选）</td><td>10/1 午市</td><td>时段偏早，需调整上午行程</td></tr>
-          <tr><td>—</td><td>横滨 → 成田机场巴士</td><td>10/3 上午</td><td>出发前核对时刻表</td></tr>
-        </tbody>
-      </table>
-      <div class="note" style="margin-top:12px">📢 你备注的「已预约」中包含 9/26 20:00 的寿司预约与 Mantensushi Nihonbashi 记录——请确认这两处为同一餐厅、同一天，避免重复订位。</div>
-    </div>
-  </section>
-
-  <!-- 天气调整 -->
-  <section id="weather">
-    <h2>三、天气调整机制</h2>
-    <div class="card">
-      <table>
-        <thead><tr><th>组</th><th>情况</th><th>建议</th></tr></thead>
-        <tbody>
-          <tr><td rowspan="4">9/28 与 9/29<br>（筑地银座 ⇄ 伊豆）</td><td>9/29 晴</td><td>按计划 9/29 去伊豆/富士山</td></tr>
-          <tr><td>9/29 雨、9/28 晴</td><td>两天互换：筑地银座放 9/29，伊豆放 9/28</td></tr>
-          <tr><td>两天均明显降雨</td><td>取消伊豆，保留东京室内行程</td></tr>
-          <tr><td>富士山雪顶 + 天气极佳</td><td>用富士山替换伊豆</td></tr>
-          <tr><td rowspan="3">10/1 与 10/2<br>（镰仓 ⇄ 横滨市区）</td><td>10/1 晴</td><td>按计划去镰仓</td></tr>
-          <tr><td>10/1 大雨、10/2 晴</td><td>两天互换</td></tr>
-          <tr><td>两天都有雨</td><td>缩短江之岛、三溪园与大栈桥</td></tr>
-        </tbody>
-      </table>
-      <div class="note" style="margin-top:12px">⚠️ 互换前请检查：人形町今半能否改期、伊豆团免费取消截止时间、富士山/箱根团是否仍有余位。</div>
-    </div>
-  </section>
-
-  <!-- 餐饮预算 -->
-  <section id="budget">
-    <h2>四、餐饮预算参考</h2>
-    <p class="lead">人民币仅用于感知量级：按 1 元 ≈ 24 日元粗略估算，以支付当天汇率为准。</p>
-    <div class="card">
-      <table>
-        <thead><tr><th>餐次</th><th>地点/类型</th><th>日元/人</th><th>人民币/人</th><th>预约</th></tr></thead>
-        <tbody>
-          <tr><td>9/26 晚餐</td><td>Kaikaya by the Sea · 海鲜创作</td><td>¥5,800 起</td><td>约 250–350</td><td>建议预约</td></tr>
-          <tr><td>9/28 早餐</td><td>筑地场外市场</td><td>¥1,500–3,000</td><td>约 60–130</td><td>不需</td></tr>
-          <tr><td>9/28 晚餐</td><td>まんてん鮨 日本桥 · 寿司</td><td>约 ¥8,800</td><td>约 350–400</td><td>已约/需预约</td></tr>
-          <tr><td>9/29</td><td>伊豆当地餐饮</td><td>视产品而定</td><td>视产品而定</td><td>随团</td></tr>
-          <tr><td>9/27 或 9/28 午餐</td><td>人形町今半 · 寿喜烧</td><td>¥5,940 起</td><td>约 280–350</td><td>建议预约</td></tr>
-          <tr><td>9/30 午餐</td><td>つじ半 · 海鲜饭</td><td>¥1,350–3,900</td><td>约 60–170</td><td>不接受</td></tr>
-          <tr><td>9/30 晚餐</td><td>港未来附近 · 洋食/汉堡/海鲜</td><td>¥2,000–4,000</td><td>约 80–170</td><td>灵活</td></tr>
-          <tr><td>10/1 午/晚餐</td><td>镰仓 · 江之岛 · 荞麦面/吻仔鱼</td><td>¥2,000–4,000</td><td>约 80–170</td><td>可预约/灵活</td></tr>
-          <tr><td>10/2 午餐</td><td>萬珍樓本店 · 粤菜</td><td>¥4,000 起</td><td>约 180–250</td><td>建议预约</td></tr>
-          <tr><td>10/2 下午茶</td><td>Hotel New Grand The Cafe</td><td>¥1,500–3,500</td><td>约 60–150</td><td>可现场</td></tr>
-          <tr><td>10/2 晚餐</td><td>勝烈庵 · 炸猪排</td><td>约 ¥2,200</td><td>约 90–120</td><td>可排队</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- 购物 -->
-  <section id="shopping">
-    <h2>五、购物分区</h2>
-    <div class="card">
-      <div class="grid">
-        <div class="mini"><b>9/26 涩谷/表参道/代官山</b>服装、潮流品牌、设计杂货、动漫 IP</div>
-        <div class="mini"><b>9/28 银座、东京站</b>美妆、百货、奢侈品、文具、伴手礼</div>
-        <div class="mini"><b>9/29 秋叶原（灵活）</b>电器、相机、游戏、动漫、手办</div>
-        <div class="mini"><b>9/30 港未来、红砖仓库</b>横滨限定、小型设计品牌</div>
-        <div class="mini"><b>10/2 元町、中华街</b>横滨特色、糕点、中华街伴手礼</div>
-        <div class="mini"><b>10/3 成田机场</b>最后补购零食、机场限定</div>
-      </div>
-      <div class="note" style="margin-top:12px">高价与退税商品尽量集中在银座、表参道或涩谷购买。</div>
-    </div>
-  </section>
-
-  <div class="footer">
-    行程依据《东京旅行.md》原始计划重新编排 · 生成于 2026-09-19 · 请以实际票面/预约/天气为准
+<!-- ============ 总览 ============ -->
+<section id="overview">
+  <h2><span class="no">01</span> 行程总览</h2>
+  <p class="lead">已按你的新时间重排：<b>9/26 去涩谷</b>、<b>9/29 去伊豆/富士山</b>、<b>10/1 去镰仓</b>；其余结合星期几合理分布。标注「固定」为已确认日期。</p>
+  <div class="card">
+    <table>
+      <thead><tr><th>日期</th><th>星期</th><th>住宿</th><th>核心行程</th><th style="width:74px">强度</th><th style="width:66px">状态</th></tr></thead>
+      <tbody>
+        <tr><td>9/25</td><td class="weekend">周五</td><td>人形町</td><td>抵达成田 → 酒店</td><td>低</td><td>抵达</td></tr>
+        <tr><td><span class="dot" style="background:var(--good)"></span>9/26</td><td class="weekend">周六</td><td>人形町</td><td>涩谷：明治神宫·原宿/表参道·代官山·涩谷 + SKY 日落</td><td>中高</td><td><span class="meal">固定</span></td></tr>
+        <tr><td><span class="dot" style="background:var(--kamakura)"></span>9/27</td><td class="weekend">周日</td><td>人形町</td><td>浅草 · 人形町老铺 · 酒店休息 · 秋叶原</td><td>中低</td><td>灵活</td></tr>
+        <tr><td><span class="dot" style="background:var(--tokyo)"></span>9/28</td><td>周一</td><td>人形町</td><td>筑地 · 银座 · 丸之内 · 东京站 + まんてん鮨晚餐</td><td>中</td><td>灵活</td></tr>
+        <tr><td><span class="dot" style="background:var(--good)"></span>9/29</td><td>周二</td><td>人形町</td><td>伊豆 / 富士山 一日游（需早起）</td><td>中</td><td><span class="meal">固定</span></td></tr>
+        <tr><td><span class="dot" style="background:var(--yokohama)"></span>9/30</td><td>周三</td><td>横滨</td><td>つじ半海鲜饭 → 转移横滨 → 套房 → 港未来夜景</td><td>低</td><td>灵活</td></tr>
+        <tr><td><span class="dot" style="background:var(--good)"></span>10/1</td><td>周四</td><td>横滨</td><td>镰仓 · 长谷 · 江之电 · 七里滨 · 江之岛</td><td>中高</td><td><span class="meal">固定</span></td></tr>
+        <tr><td><span class="dot" style="background:var(--yokohama)"></span>10/2</td><td>周五</td><td>横滨</td><td>三溪园 · 中华街 · 元町/山手 · 山下公园 · 大栈桥</td><td>中</td><td>灵活</td></tr>
+        <tr><td>10/3</td><td class="weekend">周六</td><td>—</td><td>横滨酒店 → 成田机场 → 上海</td><td>低</td><td>返程</td></tr>
+      </tbody>
+    </table>
+    <div class="info" style="margin-top:12px">🔄 重排说明：原 9/26 的筑地/银座顺延至 <b>9/28（周一）</b>，把周末人流交给涩谷，筑地放到工作日体验更佳。若 9/28 想兼顾「筑地 + 银座 + 寿司」会较充实，可在银座与丸之内间减少一处逛街。</div>
   </div>
+</section>
+
+<!-- ============ Day1 ============ -->
+<section id="day1">
+  <h2><span class="no">02</span> Day 1 · 9/25（周五）· 抵达成田 → 人形町 <span class="meal">固定·抵达</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>人形町</b></span><span>强度：<b>低</b></span><span>主题：<b>机场 → 酒店</b></span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">14:35</span><span class="desc">上海浦东机场起飞（建议提前 3 小时到机场办值机）</span>
+        <span class="time">18:45</span><span class="desc">抵达东京成田机场（入境 + 取行李）</span>
+        <span class="time">20:00</span><span class="desc">离开机场（取决于入境排队）</span>
+        <span class="time">20:00–21:30</span><span class="desc">前往人形町酒店</span>
+        <span class="time">21:30–22:00</span><span class="desc">办理入住 VIA INN PRIME 日本桥人形町</span>
+        <span class="time">22:00 后</span><span class="desc">简单晚餐（不预约正式餐厅，防延误取消费）</span>
+      </div>
+
+      <h3><span class="ic">🚄</span>交通：成田机场 → 人形町</h3>
+      <div class="trans">
+        <b>首选 · 京成 Access Express 直通都营浅草线</b>
+        <span class="rt">成田机场第一航站楼 → 京成 Access Express → 都营浅草线方向 → 人形町站或日本桥站下（约 60–75 分钟）</span>
+        <span class="rt">部分班次不停人形町，请以当天 Google Maps / NAVITIME / 乘换案内实时显示为准</span>
+      </div>
+      <div class="trans">
+        <b>备选 · Skyliner + 出租</b>
+        <span class="rt">Skyliner → 京成上野站 → 出租车去酒店（行李多、排队久时更省心）</span>
+      </div>
+
+      <h3><span class="ic">🍱</span>当晚餐饮</h3>
+      <ul class="plist">
+        <li>成田机场内拉面或日式定食</li>
+        <li>人形町附近拉面、荞麦面或居酒屋</li>
+        <li>便利店饭团、关东煮、炸鸡、牛奶</li>
+        <li>不饿就简单买早餐和饮料回酒店</li>
+      </ul>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <div class="tip">💳 <b>交通卡</b>：入境后建议先在成田机场或酒店附近换好 Suica / PASMO（支持手机钱包），后面几天乘车都用得上。</div>
+      <div class="warn">📶 <b>网络</b>：建议出发前先买好日本流量卡或 eSIM，落地即用，方便导航与看时刻表。</div>
+      <div class="tip">🛅 <b>行李</b>：当晚行李较多可先集中放到酒店再出门觅食；人形町便利店多，早餐补给方便。</div>
+      <div class="info">💰 <b>汇率</b>：可按 1 元 ≈ 24 日元粗略估算，现金少量即可，多数店支持刷卡/手机支付。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day2 涩谷 ============ -->
+<section id="day2">
+  <h2><span class="no">03</span> Day 2 · 9/26（周六）· 涩谷 <span class="meal">固定</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>人形町</b></span><span>强度：<b>中高</b></span><span>晚餐：<b>Kaikaya by the Sea</b></span><span>步数较多</span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">09:15–09:50</span><span class="desc">人形町附近早餐（咖啡、面包、饭团或日式简餐）</span>
+        <span class="time">10:00</span><span class="desc">出发前往明治神宫</span>
+        <span class="time">10:45–12:00</span><span class="desc">明治神宫（周日上午人较多，不须过早到）</span>
+        <span class="time">12:00–12:40</span><span class="desc">原宿 / Cat Street（竹下通快速经过）</span>
+        <span class="time">12:40–14:30</span><span class="desc">表参道午餐与购物（建筑 + 旗舰店）</span>
+        <span class="time">15:00–16:00</span><span class="desc">代官山 T-SITE（书店、设计用品、咖啡）</span>
+        <span class="time">16:10–16:50</span><span class="desc">中目黑河畔（可选）</span>
+        <span class="time">17:00–17:30</span><span class="desc">SHIBUYA SKY 入场看白天→日落→夜景</span>
+        <span class="time">19:00–20:20</span><span class="desc">涩谷购物与夜景（PARCO、Scramble Crossing 等）</span>
+        <span class="time">20:30–22:00</span><span class="desc">Kaikaya by the Sea 晚餐（海鲜创作料理）</span>
+        <span class="time">22:30</span><span class="desc">返回酒店（不建议继续跨区加项目）</span>
+      </div>
+
+      <h3><span class="ic">🚆</span>交通</h3>
+      <div class="trans">
+        <b>人形町 → 明治神宫</b>
+        <span class="rt">日本桥/人形町（浅草线/日比谷线）→ 换乘 JR 山手线 → 原宿站下，步行至明治神宫（约 45 分钟）</span>
+      </div>
+      <div class="trans">
+        <b>区域间</b>
+        <span class="rt">原宿 → 表参道 → 代官山 → 中目黑 → 涩谷：多为步行/短途地铁（东京地铁副都心线、东急东横线），Google Maps 即时导航即可</span>
+      </div>
+      <div class="trans">
+        <b>返回人形町</b>
+        <span class="rt">涩谷站 → JR 山手线 → 神田/日本桥转浅草线 → 人形町（末班车前回，注意 23:30 后的班次）</span>
+      </div>
+
+      <h3><span class="ic">🍽️</span>餐食</h3>
+      <div class="dst">
+        <span>早餐：人形町咖啡/面包</span><span>午餐：表参道简餐</span><span>晚餐：Kaikaya by the Sea</span>
+        <span class="meal">Kaikaya 套餐 ¥5,800/人起 · 约 250–350 元 · 酒水另计</span>
+      </div>
+      <div class="warn">预约注意：周六晚建议提前预约 Kaikaya；在线预约通常需选套餐，并仔细看取消政策。</div>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <ul class="plist">
+        <li>SHIBUYA SKY：尽量约 <b>17:00–17:30</b> 入场，同时看白天+日落+夜景；该时段最紧俏，务必尽早订。</li>
+        <li>涩谷十字路口人极多，注意手机、随身物品；过马路看信号，别低头拍照。</li>
+        <li>明治神宫穿行参道约 20 分钟，注意防晒和补水；宫内有洗手间和售卖机。</li>
+        <li>体力不足时优先删减中目黑，保留代官山与 SHIBUYA SKY。</li>
+        <li>不要在一天内强行加新宿——跨区交通与步数会明显上升。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day3 浅草 ============ -->
+<section id="day3">
+  <h2><span class="no">04</span> Day 3 · 9/27（周日）· 浅草 · 人形町 · 秋叶原 <span class="meal">灵活</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>人形町</b></span><span>强度：<b>中低</b></span><span>节奏：<b>上午传统 · 下午休息 · 晚上秋叶原</b></span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">09:20–10:00</span><span class="desc">人形町附近早餐（咖啡、面包或日式简餐）</span>
+        <span class="time">10:15</span><span class="desc">出发前往浅草</span>
+        <span class="time">10:45–12:30</span><span class="desc">浅草寺及周边（雷门 → 仲见世 → 本堂 → 周边小巷）</span>
+        <span class="time">12:30–13:00</span><span class="desc">返回人形町（为午餐留足时间）</span>
+        <span class="time">13:00–14:30</span><span class="desc">人形町今半午餐（寿喜烧）</span>
+        <span class="time">14:45–16:30</span><span class="desc">回酒店休息、午睡、整理购物品</span>
+        <span class="time">16:45</span><span class="desc">出发前往秋叶原</span>
+        <span class="time">17:00–20:15</span><span class="desc">秋叶原购物（电器、动漫、游戏、手办）</span>
+        <span class="time">20:15–21:30</span><span class="desc">秋叶原晚餐（拉面、烧肉或居酒屋）</span>
+        <span class="time">22:15</span><span class="desc">返回酒店（不继续增上野夜游）</span>
+      </div>
+
+      <h3><span class="ic">🚆</span>交通</h3>
+      <div class="trans">
+        <b>人形町 → 浅草</b>
+        <span class="rt">人形町站（都营浅草线）→ 浅草站直达（约 10 分钟，浅草线便利）</span>
+      </div>
+      <div class="trans">
+        <b>浅草 → 秋叶原</b>
+        <span class="rt">浅草站 → 都营浅草线 → 或步行至东武/银座线转 —— 建议：浅草（浅草线）→ 稻荷町/藏前转 → 秋叶原；或返回人形町后再出发</span>
+      </div>
+      <div class="trans">
+        <b>秋叶原 → 人形町</b>
+        <span class="rt">秋叶原站 → JR 山手线 → 神田/东京转浅草线 → 人形町（约 15–20 分钟）</span>
+      </div>
+
+      <h3><span class="ic">🍽️</span>餐食</h3>
+      <div class="dst">
+        <span>早餐：人形町</span><span>午餐：人形町今半（寿喜烧）</span><span>晚餐：秋叶原拉面/烧肉</span>
+        <span class="meal">今半 ¥5,940/人起 · 约 280–350 元 · 工作日午市更划算</span>
+      </div>
+      <div class="warn">
+        ⚠️ <b>人形町今半本店周日休业</b>。若想保留今半午市，建议将本日与 <a href="#day4" style="color:var(--accent-dark)">9/28 筑地/银座</a> 互换（浅草寺、秋叶原周一均照常）。<br>
+        若维持周日行程，当天午餐改为人形町/浅草其他选择（天妇罗、鳗鱼、日式定食或浅草小吃）。
+      </div>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <ul class="plist">
+        <li>浅草寺周日游客多，雷门入口人多留意拍照；仲见世小吃可挑 2–3 种分享即可（人形烧、抹茶冰淇淋、炸肉饼、日式团子）。</li>
+        <li>不建议每家网红小吃都排队；也不建议额外叠加合羽桥道具街，除非愿压缩浅草 30–45 分钟购物。</li>
+        <li>秋叶原：留意免税条件（同一店同日满 ¥5,000 可免税，办退税带护照）；中古游戏店晚上较热闹。</li>
+        <li>中午寿喜烧分量较大，晚餐可只吃拉面/烤串/居酒屋轻食。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day4 筑地银座 ============ -->
+<section id="day4">
+  <h2><span class="no">05</span> Day 4 · 9/28（周一）· 筑地 · 银座 · 丸之内 · 东京站 <span class="meal">灵活</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>人形町</b></span><span>强度：<b>中</b></span><span>晚餐：<b>まんてん鮨</b></span><span>区域多可步行</span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">09:15–09:30</span><span class="desc">起床整理（工作不需过早）</span>
+        <span class="time">09:45–11:15</span><span class="desc">筑地场外市场早餐兼早午餐（少量多样、两人分享）</span>
+        <span class="time">11:30–12:20</span><span class="desc">滨离宫恩赐庭园（可选）</span>
+        <span class="time">12:30–16:30</span><span class="desc">银座购物与城市漫步（百货、美妆、文具、建筑、咖啡）</span>
+        <span class="time">16:30–17:15</span><span class="desc">咖啡休息（不连续暴走）</span>
+        <span class="time">17:15–19:00</span><span class="desc">日比谷、丸之内、东京站（走到丸之内侧看夜景）</span>
+        <span class="time">19:30–21:00</span><span class="desc">まんてん鮨日本桥晚餐（正式寿司套餐）</span>
+        <span class="time">21:00–22:00</span><span class="desc">日本桥夜间散步 → 返回酒店</span>
+      </div>
+
+      <h3><span class="ic">🚆</span>交通</h3>
+      <div class="trans">
+        <b>人形町 → 筑地</b>
+        <span class="rt">人形町站 → 日比谷线 → 筑地站（约 10 分钟）；筑地场外市场在筑地场内南侧</span>
+      </div>
+      <div class="trans">
+        <b>筑地 → 银座 → 丸之内 → 东京站</b>
+        <span class="rt">筑地 ↔ 银座可步行或日比谷线一站；银座 → 日比谷/有乐町 → 丸之内 → 东京站步行即可（约 15–20 分钟）</span>
+      </div>
+      <div class="trans">
+        <b>东京站 → 日本桥 → 回酒店</b>
+        <span class="rt">东京站丸之内 → 步行至日本桥／或 JR 到东京转浅草线 → 人形町</span>
+      </div>
+
+      <h3><span class="ic">🍽️</span>餐食</h3>
+      <div class="dst">
+        <span>早午餐：筑地场外市场分享小吃</span><span>晚餐：まんてん鮨 Omakase</span>
+        <span class="meal">まんてん鮨 ¥8,800/人 · 约 350–400 元 · 已约 9/26 20:00 请核实日期</span>
+      </div>
+      <div class="tip">筑地建议分享：玉子烧、烤扇贝、金枪鱼刺身、蟹/海胆小碗、烤鳗鱼串、抹茶甜品、草莓大福、咖啡；不排大份海鲜丼，中午不必再安排正式午餐。</div>
+
+      <h3><span class="ic">📌</span>注意事项 / 银座购物分区</h3>
+      <div class="grid">
+        <div class="mini"><b>百货/美妆</b>银座三越、松屋银座</div>
+        <div class="mini"><b>设计/生活</b>GINZA SIX、MUJI 银座</div>
+        <div class="mini"><b>文具</b>银座伊东屋</div>
+        <div class="mini"><b>潮流买手</b>Dover Street Market Ginza</div>
+      </div>
+      <div class="info">🔖 高价与退税商品集中在这天买（银座百货大多可办游客退税，凭护照、同日同店满额）。丸之内与东京站夜景适合饭后散步，体力不够可直接砍滨离宫。</div>
+      <div class="warn">📒 まんてん鮨需绑定信用卡，取消政策较严——请核对预约日期，确认行程后再锁定。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day5 伊豆 ============ -->
+<section id="day5">
+  <h2><span class="no">06</span> Day 5 · 9/29（周二）· 伊豆 / 富士山一日游 <span class="meal">固定 · 需早起</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>人形町</b></span><span>强度：<b>中</b></span><span>重点：<b>早起的唯一一天</b></span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">07:00</span><span class="desc">起床、简单早餐（前一晚买好饭团、三明治和饮料）</span>
+        <span class="time">07:30–08:00</span><span class="desc">前往集合点（优先东京站或丸之内）</span>
+        <span class="time">08:00–20:00</span><span class="desc">伊豆一日游（以最终产品为准）</span>
+        <span class="time">20:30–21:00</span><span class="desc">返回东京（可能受交通影响）</span>
+        <span class="time">21:00–22:00</span><span class="desc">人形町附近简单晚餐（不预约有取消费餐厅）</span>
+        <span class="time">22:00</span><span class="desc">返回酒店、早点休息</span>
+      </div>
+
+      <h3><span class="ic">🚌</span>交通 / 选团</h3>
+      <div class="trans">
+        <b>推荐线路结构</b>
+        <span class="rt">东京出发 → 大室山 → 城崎海岸/门胁吊桥 →（修善寺温泉街 · 伊东海岸 · 热海 三选一）→ 东京</span>
+        <span class="rt">景点分散、本地公交班次有限，建议参加一日团而非全公共交通自由行</span>
+      </div>
+      <div class="grid">
+        <div class="mini"><b>集合点</b>东京站/丸之内优先，其次新宿</div>
+        <div class="mini"><b>语言</b>中文或中日双语导览</div>
+        <div class="mini"><b>取消政策</b>出发前可免费取消优先</div>
+        <div class="mini"><b>团型</b>中小团，避开大型购物团</div>
+        <div class="mini"><b>景点</b>至少含大室山 + 城崎海岸</div>
+        <div class="mini"><b>时长</b>约 10–12 小时可接受</div>
+      </div>
+
+      <h3><span class="ic">🗻</span>富士山替换条件（同时满足才换）</h3>
+      <ul class="plist">
+        <li>出发前确认富士山已有明显雪顶</li>
+        <li>河口湖、山中湖或富士吉田一带天气晴朗</li>
+        <li>云量较少、实际摄像头可见山体</li>
+        <li>当天无明显降雨和强风</li>
+        <li>能找到可取消或仍有余位的一日游产品</li>
+      </ul>
+      <div class="warn">即使已出现雪顶，若山体被云完全遮住，不建议替换伊豆。</div>
+      <div class="tip">♨️ 箱根作为备选：伊豆团取消、伊豆天气差但箱根较好、或想节奏更轻松时使用（温泉/美术馆/室内体验）。</div>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <ul class="plist">
+        <li>大室山·城崎海岸风较大，带件薄外套；海岸步行注意湿滑与护栏。</li>
+        <li>当天可能因堵车晚归，晚餐不约正式餐厅（拉面、牛丼、天妇罗、居酒屋、便利店皆可）。</li>
+        <li>出发前把行程单/集合地点截图存手机，以防信号不佳。</li>
+        <li>提前一晚确认团集合时间、集合地点与迟到处理。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day6 横滨 ============ -->
+<section id="day6">
+  <h2><span class="no">07</span> Day 6 · 9/30（周三）· 转移横滨 · 套房 · 港未来 <span class="meal">灵活 · 缓冲日</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>横滨洲际</b></span><span>强度：<b>低</b></span><span>主题：<b>轻松转移 + 享受 84㎡ 套房</b></span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">09:15–10:00</span><span class="desc">人形町附近早餐、整理行李（早餐别吃太饱）</span>
+        <span class="time">10:30</span><span class="desc">退房并寄存行李（行李先留酒店）</span>
+        <span class="time">11:00–12:00</span><span class="desc">つじ半日本桥海鲜饭（赶午餐高峰前）</span>
+        <span class="time">12:15</span><span class="desc">返回酒店取行李</span>
+        <span class="time">12:30–13:00</span><span class="desc">出租车前往东京站（两人带行李更轻松）</span>
+        <span class="time">13:00–14:00</span><span class="desc">JR 东海道线/上野东京线 → 横滨</span>
+        <span class="time">14:00–14:30</span><span class="desc">抵达横滨洲际，先寄存行李</span>
+        <span class="time">15:00–17:30</span><span class="desc">办理入住、享受套房（休息、拍照、整理）</span>
+        <span class="time">17:45–19:45</span><span class="desc">港未来、红砖仓库、海滨散步（傍晚+夜景）</span>
+        <span class="time">19:45–20:15</span><span class="desc">Air Cabin 或摩天轮（选一个）</span>
+        <span class="time">20:15–21:30</span><span class="desc">港未来晚餐（Hammerhead 或红砖仓库附近）</span>
+        <span class="time">22:00</span><span class="desc">返回酒店，继续享受套房</span>
+      </div>
+
+      <h3><span class="ic">🚆</span>交通：东京 → 横滨</h3>
+      <div class="trans">
+        <b>东京站 → 横滨洲际</b>
+        <span class="rt">JR 东海道线或上野东京线 → 横滨站；横滨站 → 港未来线 → 港未来站/马车道站 → 步行至酒店（或打车）</span>
+      </div>
+      <div class="trans">
+        <b>酒店 → 港未来周边</b>
+        <span class="rt">酒店 → 临港公园 → Hammerhead → Marine & Walk → 红砖仓库 → 运河公园（步行可达）；Air Cabin 只坐单程、另一程步行避免重复</span>
+      </div>
+
+      <h3><span class="ic">🍽️</span>餐食</h3>
+      <div class="dst">
+        <span>午餐：つじ半 日本桥海鲜饭</span><span>晚餐：港未来（Hammerhead/红砖仓库）</span>
+        <span class="meal">つじ半 ¥1,350–3,900/人 · 约 60–170 元 · 不接受预约，11:00 前到排队少</span>
+      </div>
+      <div class="tip">つじ半推荐先吃海鲜饭，最后加高汤做茶泡饭；早餐控制分量，把这顿当正式午餐。</div>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <ul class="plist">
+        <li>下午是否去合味道纪念馆：因入住 84㎡ 套房，更建议把下午留给酒店；若非常感兴趣，可调整为 14:30–16:00 参观、16:15 入住。</li>
+        <li>横滨站换乘港未来线请按 Google Maps 实时线路，别坐错方向。</li>
+        <li>红砖仓库晚间亮灯好看，靠海晚间风大，带件外套。</li>
+        <li>Air Cabin 与摩天轮二选一即可，不需要都坐。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day7 镰仓 ============ -->
+<section id="day7">
+  <h2><span class="no">08</span> Day 7 · 10/1（周四）· 镰仓 · 江之岛 <span class="meal">固定 · 一日游</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>横滨洲际</b></span><span>强度：<b>中高</b></span><span>主题：<b>寺庙·老街·江之电·海岸</b></span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">08:30–09:20</span><span class="desc">酒店早餐（吃足，不必在镰仓另找早饭）</span>
+        <span class="time">09:30</span><span class="desc">从酒店出发 → 横滨站 → 镰仓站</span>
+        <span class="time">10:20–11:30</span><span class="desc">鹤冈八幡宫、小町通（小町通快速游览）</span>
+        <span class="time">11:30–12:45</span><span class="desc">镰仓午餐（荞麦面、吻仔鱼或日式料理）</span>
+        <span class="time">13:00</span><span class="desc">搭乘江之电前往长谷（建议买江之电一日券）</span>
+        <span class="time">13:20–14:20</span><span class="desc">长谷寺（庭园与海景）</span>
+        <span class="time">14:30–15:10</span><span class="desc">镰仓大佛（从长谷寺步行前往）</span>
+        <span class="time">15:20–16:00</span><span class="desc">江之电前往七里滨（体验海岸线路）</span>
+        <span class="time">16:00–16:45</span><span class="desc">七里滨看海、咖啡休息（天气不好可取消）</span>
+        <span class="time">17:00–19:00</span><span class="desc">江之岛：日落、弁天桥、岛上低处</span>
+        <span class="time">19:00–20:15</span><span class="desc">江之岛晚餐（吻仔鱼盖饭、烤海鲜）</span>
+        <span class="time">20:15–21:30</span><span class="desc">返回横滨（湘南单轨→大船→JR）</span>
+        <span class="time">21:30–22:00</span><span class="desc">返回酒店，不安排额外夜游</span>
+      </div>
+
+      <h3><span class="ic">🚆</span>交通</h3>
+      <div class="trans">
+        <b>横滨 → 镰仓</b>
+        <span class="rt">横滨站 → JR 横须贺线/东海道线 → 镰仓站（约 25–30 分钟）</span>
+      </div>
+      <div class="trans">
+        <b>镰仓观光（江之电）</b>
+        <span class="rt">镰仓（八幡宫/小町通）→ 江之电 → 长谷（长谷寺/大佛）→ 七里滨 → 江之岛；买江之电一日券方便多次上下</span>
+      </div>
+      <div class="trans">
+        <b>江之岛 → 横滨</b>
+        <span class="rt">可搭湘南单轨（片濑江ノ岛）→ 大船站 → 转 JR 至横滨；或江之电回镰仓转 JR。末班车注意时间</span>
+      </div>
+
+      <h3><span class="ic">🍽️</span>餐食</h3>
+      <div class="dst">
+        <span>午餐：镰仓荞麦面/吻仔鱼/日式料理 ¥2,000–4,000</span>
+        <span>晚餐：江之岛吻仔鱼盖饭/烤海鲜 ¥2,000–4,000</span>
+      </div>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <ul class="plist">
+        <li>默认不加入北镰仓（圆觉寺/建长寺），避免早起、寺庙审美疲劳、压缩午餐与江之岛日落；若特别想看可取消七里滨咖啡、早约 45 分钟出发。</li>
+        <li>若预约到合适时段可去「鎌倉 松原庵」（环境适合情侣，午市偏早）；美食优先版需 08:00 早餐、08:50 出发、11:00 午餐，并取消上午八幡宫与小町通，两套不叠加。</li>
+        <li>江之岛到岛时已玩一整天，重点体验弁天桥、入口、商店街、低处与海岸日落；不强行走完全部台阶、展望塔与岩屋。</li>
+        <li>海岸线海风大，注意随身物品；七里滨若天气差可跳过直接去江之岛。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day8 横滨市区 ============ -->
+<section id="day8">
+  <h2><span class="no">09</span> Day 8 · 10/2（周五）· 横滨市区 <span class="meal">灵活 · 最后一晚</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>住宿：<b>横滨洲际</b></span><span>强度：<b>中</b></span><span>主题：<b>庭园·中华街·洋馆·港口夜景</b></span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">08:30–09:30</span><span class="desc">酒店早餐（不需太早）</span>
+        <span class="time">10:00</span><span class="desc">打车前往三溪园</span>
+        <span class="time">10:30–12:20</span><span class="desc">三溪园（日式庭园、历史建筑，1.5–2 小时）</span>
+        <span class="time">12:20–13:00</span><span class="desc">打车前往中华街（减少公交换乘）</span>
+        <span class="time">13:00–14:30</span><span class="desc">萬珍樓午餐（中华街粤菜）</span>
+        <span class="time">14:40–16:40</span><span class="desc">元町、山手西洋馆、港见丘公园（有坡度，慢慢走）</span>
+        <span class="time">17:00–18:00</span><span class="desc">Hotel New Grand 下午茶</span>
+        <span class="time">18:00–19:00</span><span class="desc">山下公园傍晚海港散步</span>
+        <span class="time">19:00–20:00</span><span class="desc">横滨大栈桥夜景</span>
+        <span class="time">20:15–21:30</span><span class="desc">勝烈庵晚餐（炸猪排）</span>
+        <span class="time">22:00</span><span class="desc">返回酒店，完成最后一晚</span>
+      </div>
+
+      <h3><span class="ic">🚆</span>交通</h3>
+      <div class="trans">
+        <b>酒店 → 三溪园</b>
+        <span class="rt">建议直接打车（约 15–20 分钟）；或港未来线转公交，但打车更省时</span>
+      </div>
+      <div class="trans">
+        <b>三溪园 → 中华街 → 元町/山手</b>
+        <span class="rt">打车至中华街；其后中华街 → 元町商店街 → 山手西洋馆 → 港见丘公园 → Hotel New Grand 可步行串联</span>
+      </div>
+      <div class="trans">
+        <b>回酒店</b>
+        <span class="rt">山下公园/大栈桥一带 → 步行或港未来线 → 港未来站 → 酒店</span>
+      </div>
+
+      <h3><span class="ic">🍽️</span>餐食</h3>
+      <div class="dst">
+        <span>午餐：萬珍樓 ¥4,000/人起 · 约 180–250 元</span>
+        <span>下午茶：Hotel New Grand The Cafe 约 ¥1,500–3,500</span>
+        <span>晚餐：勝烈庵 炸猪排约 ¥2,200 · 约 90–120 元</span>
+      </div>
+      <div class="tip">下午茶推荐分享：布丁 à la mode、那不勒斯意面、海鲜焗饭、咖啡/红茶。中午和下午茶吃多，勝烈庵可减少点单量，不必硬吃完整套餐。</div>
+
+      <h3><span class="ic">📌</span>注意事项</h3>
+      <ul class="plist">
+        <li>萬珍樓在线提交后注意查餐厅确认邮件（可能需二次确认）。</li>
+        <li>山手区域有坡度，若下雨或前一天镰仓走路多，可删减山手洋馆内部，只保留元町与港见丘。</li>
+        <li>三溪园不必走遍所有角落，重点看主庭园、历史建筑与水景。</li>
+        <li>大栈桥适合傍晚看港未来亮灯，注意散步返回时间避免太晚。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Day9 返程 ============ -->
+<section id="day9">
+  <h2><span class="no">10</span> Day 9 · 10/3（周六）· 横滨 → 成田 → 上海 <span class="meal">固定 · 返程</span></h2>
+  <div class="day">
+    <div class="day-meta"><span>航班：<b>15:20 成田起飞 → 17:50 浦东</b></span><span>强度：<b>低</b></span><span>当天不排上午景点</span></div>
+    <div class="day-body">
+      <div class="ts">
+        <span class="time">07:50–08:40</span><span class="desc">酒店早餐（当天稍早起床）</span>
+        <span class="time">08:40–09:10</span><span class="desc">整理行李、退房，检查护照与退税单据</span>
+        <span class="time">09:20</span><span class="desc">酒店大堂候车（提前确认巴士乘车点）</span>
+        <span class="time">09:40</span><span class="desc">机场巴士出发（以临行时刻表为准）</span>
+        <span class="time">11:45</span><span class="desc">抵达成田机场第一航站楼（预留值机托运时间）</span>
+        <span class="time">12:00–13:00</span><span class="desc">值机、安检（国航国际航班）</span>
+        <span class="time">13:00–14:20</span><span class="desc">机场午餐、补购伴手礼（别拖到登机前）</span>
+        <span class="time">15:20</span><span class="desc">起飞返回上海</span>
+        <span class="time">17:50</span><span class="desc">抵达上海浦东机场</span>
+      </div>
+
+      <h3><span class="ic">🚌</span>交通：横滨 → 成田机场</h3>
+      <div class="trans">
+        <b>首选 · 机场巴士</b>
+        <span class="rt">优先横滨洲际大酒店周边直达成田机场的巴士；此前部分班次约 09:40 酒店附近出发、11:45 到成田 T1，但可能随季节调整</span>
+      </div>
+      <div class="trans">
+        <b>备选 · 打车至 YCAT</b>
+        <span class="rt">若酒店班次调整，打车到横滨站东口 YCAT，再乘去成田机场的巴士</span>
+      </div>
+
+      <h3><span class="ic">📌</span>出发前一周核对清单</h3>
+      <ul class="plist">
+        <li>2026/10/3 实际巴士班次与是否停靠横滨洲际</li>
+        <li>是否需要提前购票、行李数量限制</li>
+        <li>成田机场第一航站楼预计到达时间</li>
+        <li>护照、签证、免税单据、预留值机排队时间</li>
+      </ul>
+      <div class="info">🧾 退税提醒：若在东京/横滨买过可退税商品，出发前把发票和护照放一起，值机前进关前办理。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 预约 ============ -->
+<section id="bookings">
+  <h2><span class="no">11</span> 预约与订位</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>优先级</th><th>项目</th><th>时间</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="4">第一优先<br>尽快确认</td><td>まんてん鮨 日本桥</td><td class="weekend">9/26 20:00 ✍️已约</td><td>Omakase 约 ¥8,800/人；需绑卡、取消严</td></tr>
+        <tr><td>Kaikaya by the Sea</td><td>9/26 20:30 晚餐</td><td>海鲜创作 ¥5,800 起/人</td></tr>
+        <tr><td>SHIBUYA SKY</td><td>9/26 17:00–17:30</td><td>日落时段最紧俏，尽早订</td></tr>
+        <tr><td>伊豆 / 富士山一日游</td><td>9/29</td><td>优先可免费取消产品</td></tr>
+        <tr><td>第二优先<br>确定后订</td><td>人形町今半本店</td><td>9/27 或 9/28（周一午市更划算）</td><td>周日休业，注意选可调预约</td></tr>
+        <tr><td>—</td><td>萬珍樓本店</td><td>10/2 13:00</td><td>注意餐厅二次确认邮件</td></tr>
+        <tr><td>—</td><td>鎌倉 松原庵（可选）</td><td>10/1 午市</td><td>时段偏早，需调整上午行程</td></tr>
+        <tr><td>—</td><td>横滨 → 成田机场巴士</td><td>10/3 上午</td><td>出发前核对时刻表</td></tr>
+      </tbody>
+    </table>
+    <div class="info" style="margin-top:12px">📢 你备注的「已预约」中含 9/26 20:00 寿司预约与 Mantensushi Nihonbashi 记录——请确认是否为同一餐厅同一晚，避免重复订位。</div>
+  </div>
+</section>
+
+<!-- ============ 天气 ============ -->
+<section id="weather">
+  <h2><span class="no">12</span> 天气调整机制</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>组</th><th>情况</th><th>建议</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="4">9/28 与 9/29<br>（筑地银座 ⇄ 伊豆）</td><td>9/29 晴</td><td>按计划 9/29 去伊豆/富士山</td></tr>
+        <tr><td>9/29 雨、9/28 晴</td><td>两天互换：筑地银座放 9/29，伊豆放 9/28</td></tr>
+        <tr><td>两天均明显降雨</td><td>取消伊豆，保留东京室内行程</td></tr>
+        <tr><td>富士山雪顶 + 天气极佳</td><td>用富士山替换伊豆</td></tr>
+        <tr><td rowspan="3">10/1 与 10/2<br>（镰仓 ⇄ 横滨市区）</td><td>10/1 晴</td><td>按计划去镰仓</td></tr>
+        <tr><td>10/1 大雨、10/2 晴</td><td>两天互换</td></tr>
+        <tr><td>两天都有雨</td><td>缩短江之岛、三溪园与大栈桥</td></tr>
+      </tbody>
+    </table>
+    <div class="info" style="margin-top:12px">⚠️ 互换前请检查：人形町今半能否改期、伊豆团免费取消截止时间、富士山/箱根团是否仍有余位。</div>
+  </div>
+</section>
+
+<!-- ============ 预算 ============ -->
+<section id="budget">
+  <h2><span class="no">13</span> 餐饮预算参考</h2>
+  <p class="lead">人民币仅用于感受量级：按 1 元 ≈ 24 日元估算，以支付当天汇率为准。</p>
+  <div class="card">
+    <table>
+      <thead><tr><th>餐次</th><th>地点/类型</th><th>日元/人</th><th>人民币/人</th><th>预约</th></tr></thead>
+      <tbody>
+        <tr><td>9/26 晚餐</td><td>Kaikaya by the Sea · 海鲜创作</td><td>¥5,800 起</td><td>约 250–350</td><td>建议预约</td></tr>
+        <tr><td>9/28 早餐</td><td>筑地场外市场</td><td>¥1,500–3,000</td><td>约 60–130</td><td>不需</td></tr>
+        <tr><td>9/28 晚餐</td><td>まんてん鮨 日本桥 · 寿司</td><td>约 ¥8,800</td><td>约 350–400</td><td>已约/需预约</td></tr>
+        <tr><td>9/29</td><td>伊豆当地餐饮</td><td>视产品而定</td><td>视产品而定</td><td>随团</td></tr>
+        <tr><td>9/27 或 9/28 午餐</td><td>人形町今半 · 寿喜烧</td><td>¥5,940 起</td><td>约 280–350</td><td>建议预约</td></tr>
+        <tr><td>9/30 午餐</td><td>つじ半 · 海鲜饭</td><td>¥1,350–3,900</td><td>约 60–170</td><td>不接受</td></tr>
+        <tr><td>9/30 晚餐</td><td>港未来附近 · 洋食/汉堡/海鲜</td><td>¥2,000–4,000</td><td>约 80–170</td><td>灵活</td></tr>
+        <tr><td>10/1 午/晚餐</td><td>镰仓 · 江之岛 · 荞麦面/吻仔鱼</td><td>¥2,000–4,000</td><td>约 80–170</td><td>可预约/灵活</td></tr>
+        <tr><td>10/2 午餐</td><td>萬珍樓本店 · 粤菜</td><td>¥4,000 起</td><td>约 180–250</td><td>建议预约</td></tr>
+        <tr><td>10/2 下午茶</td><td>Hotel New Grand The Cafe</td><td>¥1,500–3,500</td><td>约 60–150</td><td>可现场</td></tr>
+        <tr><td>10/2 晚餐</td><td>勝烈庵 · 炸猪排</td><td>约 ¥2,200</td><td>约 90–120</td><td>可排队</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 购物 ============ -->
+<section id="shopping">
+  <h2><span class="no">14</span> 购物分区</h2>
+  <div class="card">
+    <div class="grid">
+      <div class="mini"><b>9/26 涩谷/表参道/代官山</b>服装、潮流品牌、设计杂货、动漫 IP</div>
+      <div class="mini"><b>9/28 银座、东京站</b>美妆、百货、奢侈品、文具、伴手礼</div>
+      <div class="mini"><b>9/29 秋叶原（灵活）</b>电器、相机、游戏、动漫、手办</div>
+      <div class="mini"><b>9/30 港未来、红砖仓库</b>横滨限定、小型设计品牌</div>
+      <div class="mini"><b>10/2 元町、中华街</b>横滨特色、糕点、中华街伴手礼</div>
+      <div class="mini"><b>10/3 成田机场</b>最后补购零食、机场限定</div>
+    </div>
+    <div class="note" style="margin-top:12px">高价与退税商品尽量集中在银座、表参道或涩谷购买。</div>
+  </div>
+</section>
+
+<div class="footer">行程依据《东京旅行.md》原始计划重新编排并增补交通/注意项 · 更新于 2026-09-19 · 请以实际票面、预约与天气为准</div>
 </div>
+
+<button id="topbtn" title="Back to top">↑</button>
+
+<script>
+  var btn = document.getElementById('topbtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+  });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+</script>
 
 </body>
 </html>HTMLEOF
-echo "written:n: $(wc -c < /Users/jialuncai/Desktop/code/air/tokyo-trip-site/index.html) bytes"
+echo "written: $(wc -c < /Users/jialuncai/Desktop/code/air/tokyo-trip-site/index.html) bytes, $(wc -l < /Users/jialuncai/Desktop/code/air/tokyo-trip-site/index.html) lines"
